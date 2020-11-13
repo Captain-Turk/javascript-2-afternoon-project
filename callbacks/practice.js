@@ -37,6 +37,9 @@ first(names, function(firstName){
   return firstName;
 });
 // Do not edit the code above.
+function first(arr, cb){
+  cb(arr[0])
+}
 
 
 
@@ -55,7 +58,9 @@ last(names, function(lastName){
   return lastName;
 });
 // Do not edit the code above.
-
+function last(arr, cb){
+  cb(arr[arr.length -1])
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -72,7 +77,9 @@ multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
 });
 // Do not edit the code above.
-
+function multiply(num1, num2, cb){
+  cb(num1*num2)
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -85,17 +92,16 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-
-// Do not edit the code below.
-contains(names, 'Colt', function(result){
-  if(result === true){
-    console.log('Colt is in the array');
-  } else {
-    console.log('Colt is not in the array');
+function contains(arr, name, cb){
+  for(i=0; i<arr.length; i++){
+    if (arr[i]===name){
+      cb(true)
+    } else {
+      cb(false)
+    }
   }
-});
-// Do not edit the code above.
 
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -106,6 +112,16 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+function uniq(arr, cb){
+  for(let i=0; i<= arr.length; i++){
+    for(let j=1; j<= arr.length; j++){
+      if(arr[i]===arr[j]){
+        arr.splice[j,1]
+      }
+      cb(arr)
+    }
+  }
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -128,8 +144,13 @@ uniq(names, function(uniqArr){
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
 });
-// Do not edit the code above.
+// // Do not edit the code above.
 
+function each(arr,cb){
+  for(let i=0; i<=arr.length; i++){
+    cb(arr[i], i)
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -140,6 +161,24 @@ each(names, function(item, indice){
 */
 
 // Code here
+function getUserById(arr, id, cb){
+  for(let i=0; i<=arr.length; i++){
+    if(arr[i].id === id){
+    }
+
+  }
+  cb(arr[i])
+}
+
+// function getUserById(arr, id, cb){
+//   for(let i=0; i<=arr.length; i++){
+//     if(arr[i].id === id){
+//       cb(arr[i])
+//     }
+
+//   }
+// }
+
 
 // Do not edit the code below.
 var users = [
@@ -167,3 +206,4 @@ getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
 });
 // Do not edit the code above.
+

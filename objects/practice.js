@@ -15,7 +15,12 @@
 */
 
 //Code here
+const me = {
+  name: 'Mehmet',
+  age: '36'
+}
 
+alert(me.name)
 ////////// PROBLEM 2 //////////
 
 /*
@@ -24,20 +29,30 @@
 */
 
 //Code here
-
+let favoriteThings = {
+  band: 'The Cardigans',
+  food: 'Kebab', 
+  person: 'My Mom',
+  book: 'Nutuk',
+  movie: 'Braveheart',
+  holiday: 'Summer'
+}
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car
   and then another key named 'brand' with the value being your favorite brand.
 */
 
 //Code here
-
-/*
-  Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
-  and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
-*/
+favoriteThings.car = 'Ferrari'
+favoriteThings['brand'] = 'Samsung' 
+// /*
+//   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
+//   and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
+// */
 
 //Code here
+favoriteThings.food = 'Chicken Nuggets'
+favoriteThings.book = 'Harry Potter'
 
 ////////// PROBLEM 3 //////////
 
@@ -50,13 +65,23 @@
 */
 
 //Code here
+let backPack = {
 
+}
+
+let item = 'firstPocket'
+
+backPack['item[0]']
+
+backPack.firstPocket = 'chapstick'
+
+backPack.color = 'black'
 /*
   After you do the above, alert your entire backPack object.
 */
 
 //Code here
-
+alert(backPack)
 /*
 You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
@@ -64,7 +89,7 @@ Instead, console.log your whole backPack object and then check out the console.
 */
 
 //Code here
-
+console.log(backPack)
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -80,11 +105,22 @@ var user2 = {
 
 /*
   Let's say I, the user, decided to change my name and email address to the following:
-  name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
+  name -> 'Bryan G. Smith' and email -> 'ryan.smith@devmountba.in'.
   Make that change without modifying the original object code above.
 */
 
 //Code Here
+user2.name = 'Bryan G. Smith'
+user2.email = 'ryan.smith@devmountba.in'
+
+console.log(user2)
+
+// let user = user2
+
+// user.name = 'Bryan G. Smith'
+// user.email = 'ryan.smith@devmountba.in'
+
+
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
 ////////// MOVE ONTO NEXT SECTION BEFORE WORKING ON THESE ////////////////
@@ -96,20 +132,41 @@ var user2 = {
 */
 
 //Code Here
+let methodCollection = {
 
+}
 /*
   Now add two methods (functions that are properties on objects) to your methodCollection object.
   One called 'alertHello' which alerts 'hello' and another method called 'logHello' which logs 'hello' to the console.
 */
 
+
 //Code Here
 
+methodCollection = {
+  alertHello: function(){
+    alert('hello')
+
+  },
+  logHello: function(){
+    console.log('hello')
+  }
+
+}
+// methodCollection.alertHello(){
+//   alert('hello')
+// }
+
+// methodCollection.logHello(){
+//   console.log('hello')
+// }
 /*
   Now call your alertHello and logHello methods.
 */
 
 //Code Here
-
+methodCollection.alertHello()
+methodCollection.logHello()
 ////////// PROBLEM 6 //////////
 
 /*
@@ -118,7 +175,14 @@ var user2 = {
 */
 
 //Code Here
-
+function makePerson(name, birthday, ssn){
+  return {
+    name,
+    birthday,
+    ssn
+  }
+  
+}
 ////////// PROBLEM 7 //////////
 
 /*
@@ -127,3 +191,10 @@ var user2 = {
 */
 
 //Code Here
+function makeCard(cardNumber, expirationDate, securityCode){
+  return {
+    cardNumber,
+    expirationDate,
+    securityCode
+  }
+}
